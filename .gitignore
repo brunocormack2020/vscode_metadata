@@ -1,5 +1,6 @@
 *.jsonl
 *.jsonl.progress.json
 *.log
+*.csv
 __pycache__/
 *.pyc
