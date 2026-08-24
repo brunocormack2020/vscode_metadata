@@ -37,12 +37,12 @@ def save_progress(output_path, last_completed_page):
         json.dump({"last_completed_page": last_completed_page}, f)
 
 
-def fetch_page(page_number, page_size):
+def fetch_page(page_number, page_size, sort_by=SORT_BY_TITLE, sort_order=SORT_ORDER_ASC):
     payload = build_payload(
         page_size=page_size,
         page_number=page_number,
-        sort_by=SORT_BY_TITLE,
-        sort_order=SORT_ORDER_ASC,
+        sort_by=sort_by,
+        sort_order=sort_order,
     )
     delay = 2.0
     for attempt in range(1, MAX_RETRIES + 1):
